@@ -18,11 +18,6 @@ required to reproduce the tables and figures of the manuscript:
 
 The purpose of this repository is to ensure full reproducibility of the results presented in the manuscript.
 
-It includes:
-- Real-data case studies
-- Extensive simulation studies
-- Scripts for generating all tables and figures in the paper and web appendices
-
 All analyses are implemented in **R**.
 
 The repository is organized as follows:
@@ -52,7 +47,7 @@ The working directory should be set to the **main repository folder**.
 
 ## `./data/`
 
-- **`hhosp.rda`**
+- `hhosp.rda`
 
   Original data from the **HF-ACTION randomized controlled trial**, used in **Section 6** of the manuscript:
   
@@ -64,7 +59,7 @@ The working directory should be set to the **main repository folder**.
   It was kindly provided by the BioLINCC of the National Heart, Lung, and Blood Institute.
 
 
-- **`colorectal.rda`**
+- `colorectal.rda`
 
   Original data from a colorectal cancer trial, used in **Web Appendix D**:
   
@@ -76,10 +71,10 @@ The working directory should be set to the **main repository folder**.
 
 ## `./casestudies/`
 
-- **`HFAction.R`**  
+- `HFAction.R`
   Reproduces the analysis presented in **Section 6** of the manuscript.
 
-- **`ColorectalCancer.R`**  
+- `ColorectalCancer.R` 
   Reproduces the analysis presented in **Web Appendix D**.
 
 - `./casestudies/results/`
@@ -97,11 +92,11 @@ Due to computational cost, simulations save intermediate results that are later 
 
 ### Web Appendix C
 
-- **`1_SimTabC1.R`**  
+- `1_SimTabC1.R` 
   Performs simulations for **Web Table C.1**.  
   Uses functions defined in `utilsTabC1.R` and `functionsTabC1.cpp`.
 
-- **`2_SimTabC2.R`**  
+- `2_SimTabC2.R`  
   Performs simulations for **Web Table C.2**.  
   Uses functions defined in `utilsTabC2.R`.
 
@@ -132,13 +127,13 @@ Results are saved, respectively, in:
 
 The following scripts are provided for running simulations on a Linux cluster using **PBS/qsub**:
 
-- **`1_and_2_Sims.qsub`**  
+- `1_and_2_Sims.qsub` 
   Runs simulations for Tables C.1 and C.2 in parallel.
 
-- **`3_SimTab1TabE1.sh`**  
+- `3_SimTab1TabE1.sh`
   Submits multiple jobs for Table 1 and Web Table E.1.
 
-- **`4_SimTab2TabE2.sh`**  
+- `4_SimTab2TabE2.sh` 
   Submits multiple jobs for Table 2 and Web Table E.2.
 
 You may need to adapt the following lines depending on your system setup:
@@ -155,7 +150,6 @@ All scripts used to generate the LaTeX tables appearing in the manuscript and we
 ```
 
 This folder contains:
-- `.txt` files with the **LaTeX table bodies**
 
 - **`1_PrintTabC1.R`**  
   Generates the body of **Web Table C.1** (`TableC1body.txt`)
@@ -170,6 +164,8 @@ This folder contains:
 - **`4_PrintTab2TabE2.R`**  
   Generates the bodies of **Table 2** and **Web Table E.2**  
   (`Table2Latex.txt`, `TableE2Latex.txt`)
+  
+- `.txt` files with the LaTeX table bodies
 
 
 ## Software Environment
@@ -206,7 +202,7 @@ loaded via a namespace (and not attached):
 [21] survival_3.8-3        
 ```
 
-### Linux HPC Cluster (Simulation Studies)
+### Linux HPC Cluster for Simulation Studies
 ```
 R version 4.5.1 (2025-06-13)
 Platform: x86_64-pc-linux-gnu
