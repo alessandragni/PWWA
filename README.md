@@ -83,12 +83,7 @@ The working directory should be set to the **main repository folder**.
 
 ---
 
-## 🔬 Simulation Studies
-
-All simulation code is located in `./simulations/`.
-
-Due to computational cost, simulations save intermediate results that are later used to generate tables.
-
+## `./simulations/`
 
 ### Web Appendix C
 
@@ -101,7 +96,7 @@ Due to computational cost, simulations save intermediate results that are later 
   Uses functions defined in `utilsTabC2.R`.
 
 Default number of replications: `nsim = 1000` (can be reduced for faster execution).
-Results are saved in:
+Intermediate results are saved in:
 ```
 ./intermediate_results/TabC1TabC2/
 ```
@@ -116,7 +111,7 @@ Results are saved in:
   Simulations for **Table 2** and **Web Table E.2**
 
 Default number of replications: `nsim = 5000` (can be reduced for faster execution).
-Results are saved, respectively, in:
+Intermediate results are saved, respectively, in:
 ```
 ./intermediate_results/Tab1TabE1/
 ./intermediate_results/Tab2TabE2/
@@ -143,13 +138,9 @@ source $HOME/spack-1.0/share/spack/setup-env.sh
 spack load r
 ```
 
-### Generating Tables
-All scripts used to generate the LaTeX tables appearing in the manuscript and web appendices are located in:
-```
-./simulations/results/
-```
+### `./simulations/results/`
 
-This folder contains:
+This folder contains all scripts used to generate the LaTeX tables appearing in the manuscript and web appendices
 
 - **`1_PrintTabC1.R`**  
   Generates the body of **Web Table C.1** (`TableC1body.txt`)
