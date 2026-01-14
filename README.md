@@ -34,17 +34,18 @@ All analyses are implemented in **R**.
 
 ```
 .
-├── data/ # Clinical trial datasets (restricted access)
-├── casestudies/ # Real-data analyses
+├── data/ 
+├── casestudies/ 
 │ ├── HFAction.R
 │ ├── ColorectalCancer.R
 │ └── results/
-├── simulations/ # Simulation studies
+├── simulations/ 
 │ ├── intermediate_results/
 │ ├── results/
 │ ├── *.R
 │ ├── *.sh
-│ └── *.qsub
+│ ├── *.qsub
+| └── *.cpp
 └── README.md
 └── README.txt
 ```
@@ -69,7 +70,6 @@ Original data from the **HF-ACTION randomized controlled trial**, used in **Sect
 This dataset **cannot be shared** due to privacy and confidentiality restrictions.  
 It was kindly provided by the BioLINCC of the National Heart, Lung, and Blood Institute.
 
----
 
 #### `colorectal.rda`
 
@@ -105,9 +105,8 @@ Running both scripts reproduces all results for Section 6 and Web Appendix D.
 
 All simulation code is located in `./simulations/`.
 
-Due to computational cost, simulations save **intermediate results** that are later used to generate tables.
+Due to computational cost, simulations save intermediate results that are later used to generate tables.
 
----
 
 ### Web Appendix C
 
@@ -124,13 +123,10 @@ Results are saved in:
 ./intermediate_results/TabC1TabC2/
 ```
 
+Default number of replications: `nsim = 1000` (can be reduced for faster execution).
 
-🔧 *Tip:*  
-To reduce computation time, lower the number of replications by modifying the `nsim` variable (default: 1000).
 
----
-
-### Tables 1, 2 and Web Appendix E
+### Tables 1, 2 and Web Appendix E.1 and E.2
 
 - **`3_SimTab1TabE1.R`**  
   Simulations for **Table 1** and **Web Table E.1**
@@ -144,12 +140,9 @@ Results are saved in:
 ./intermediate_results/Tab2TabE2/
 ```
 
+Default number of replications: `nsim = 5000` (can be reduced for faster execution).
 
 
-Default number of replications: `nsim = 5000`  
-(can be reduced for faster execution).
-
----
 
 ### Batch Submission Scripts
 
@@ -170,3 +163,36 @@ The following scripts are provided for running simulations on a Linux cluster us
 source $HOME/spack-1.0/share/spack/setup-env.sh
 spack load r
 ```
+
+### Generating Tables
+All scripts used to generate the LaTeX tables appearing in the manuscript and web appendices are located in:
+```
+./simulations/results/
+```
+
+This folder contains:
+- `.txt` files with the **LaTeX table bodies**
+- R scripts used to generate these files from the simulation results
+
+
+  - **`1_PrintTabC1.R`**  
+    Generates the body of **Web Table C.1** (`TableC1body.txt`)
+
+  - **`2_PrintTabC2.R`**  
+    Generates the body of **Web Table C.2** (`TableC2body.txt`)
+
+  - **`3_PrintTab1TabE1.R`**  
+    Generates the bodies of **Table 1** and **Web Table E.1**  
+    (`Table1Latex.txt`, `TableE1Latex.txt`)
+
+  - **`4_PrintTab2TabE2.R`**  
+    Generates the bodies of **Table 2** and **Web Table E.2**  
+    (`Table2Latex.txt`, `TableE2Latex.txt`)
+
+
+## 💻 Software Environment
+
+### Local Machine (macOS)
+
+### Linux HPC Cluster (Simulation Studies)
+
