@@ -1,6 +1,3 @@
-# PWWA
-
-
 # Nonparametric Estimation of the Patient-Weighted While-Alive Estimand
 
 **Supplementary information & reproducible research code**
@@ -17,7 +14,7 @@ required to reproduce the tables and figures of the manuscript:
 
 ---
 
-## 📌 Overview
+## Overview
 
 The purpose of this repository is to ensure full reproducibility of the results presented in the manuscript.
 
@@ -28,9 +25,8 @@ It includes:
 
 All analyses are implemented in **R**.
 
----
+The repository is organized as follows:
 
-## 📁 Repository Structure
 
 ```
 .
@@ -54,11 +50,9 @@ The working directory should be set to the **main repository folder**.
 
 ---
 
-## 📊 Data
+## `./data/`
 
-### `./data/`
-
-#### `hhosp.rda`
+- **`hhosp.rda`**
 
 Original data from the **HF-ACTION randomized controlled trial**, used in **Section 6** of the manuscript:
 
@@ -66,12 +60,11 @@ Original data from the **HF-ACTION randomized controlled trial**, used in **Sect
 > *Efficacy and safety of exercise training in patients with chronic heart failure.*  
 > **JAMA**, 301(14), 1439–1450.
 
-⚠️ **Data availability:**  
 This dataset **cannot be shared** due to privacy and confidentiality restrictions.  
 It was kindly provided by the BioLINCC of the National Heart, Lung, and Blood Institute.
 
 
-#### `colorectal.rda`
+- **`colorectal.rda`**
 
 Original data from a colorectal cancer trial, used in **Web Appendix D**:
 
@@ -81,9 +74,7 @@ Original data from a colorectal cancer trial, used in **Web Appendix D**:
 
 ---
 
-## 🏥 Case Studies
-
-### `./casestudies/`
+## `./casestudies/`
 
 - **`HFAction.R`**  
   Reproduces the analysis presented in **Section 6** of the manuscript.
@@ -91,11 +82,11 @@ Original data from a colorectal cancer trial, used in **Web Appendix D**:
 - **`ColorectalCancer.R`**  
   Reproduces the analysis presented in **Web Appendix D**.
 
-#### `./casestudies/results/`
+- `./casestudies/results/`
 
-Contains:
-- PDF plots
-- Text file containing the body of **Table 3**
+  Contains:
+  - PDF plots
+  - Text file containing the body of **Table 3**
 
 Running both scripts reproduces all results for Section 6 and Web Appendix D.
 
