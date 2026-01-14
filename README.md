@@ -32,6 +32,7 @@ All analyses are implemented in **R**.
 
 ## 📁 Repository Structure
 
+```
 .
 ├── data/ # Clinical trial datasets (restricted access)
 ├── casestudies/ # Real-data analyses
@@ -46,7 +47,7 @@ All analyses are implemented in **R**.
 │ └── *.qsub
 └── README.md
 └── README.txt
-
+```
 
 The working directory should be set to the **main repository folder**.
 
@@ -119,7 +120,9 @@ Due to computational cost, simulations save **intermediate results** that are la
   Uses functions defined in `utilsTabC2.R`.
 
 Results are saved in:
+```
 ./intermediate_results/TabC1TabC2/
+```
 
 
 🔧 *Tip:*  
@@ -136,8 +139,10 @@ To reduce computation time, lower the number of replications by modifying the `n
   Simulations for **Table 2** and **Web Table E.2**
 
 Results are saved in:
+```
 ./intermediate_results/Tab1TabE1/
 ./intermediate_results/Tab2TabE2/
+```
 
 
 
@@ -164,4 +169,4 @@ The following scripts are provided for running simulations on a Linux cluster us
 ```bash
 source $HOME/spack-1.0/share/spack/setup-env.sh
 spack load r
-
+```
