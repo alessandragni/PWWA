@@ -8,7 +8,7 @@ required to reproduce the tables and figures of the manuscript:
 
 [arXiv preprint](https://arxiv.org/abs/2412.03246)
 
-**Contact:** alessandra.ragni@polimi.it
+**Contact:** alessandra.ragni@polimi.it, 
 
 ---
 
@@ -17,7 +17,7 @@ required to reproduce the tables and figures of the manuscript:
 The purpose of this repository is to ensure full reproducibility of the results presented in the manuscript.
 
 The implementation of the present repository leverages the **R** implementation included 
-within the R package `mets` (specifically `WA_recurrent()`, by Prof. Thomas Scheike).
+within the R package `mets` (specifically `WA_recurrent()`, by Prof. Thomas Scheike [thsc@sund.ku.dk]).
 
 The repository is organized as follows:
 
