@@ -86,7 +86,7 @@ It contains four subfolders containing the following files:
 ./data/:
 
     hhosp.rda
-    An R data file containing the original data of the HF-ACTION study
+    An file containing the original data of the HF-ACTION study
     used for analysis in Section 6
     from O’Connor, Christopher M., et al. "Efficacy and safety of exercise training 
     in patients with chronic heart failure: HF-ACTION randomized controlled trial." 
@@ -96,7 +96,7 @@ It contains four subfolders containing the following files:
     and Blood Institute.
     
     colorectal.rda
-    An R data file containing the original data of the colorectal cancer study 
+    An file containing the original data of the colorectal cancer study 
     used for analysis in Web Appendix D
     from Ducreux, Michel, et al. "Sequential versus combination chemotherapy for the treatment 
     of advanced colorectal cancer (FFCD 2000–05): an open-label, randomised, phase 3 trial." 
