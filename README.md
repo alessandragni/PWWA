@@ -8,7 +8,7 @@ required to reproduce the tables and figures of the manuscript:
 
 [arXiv preprint](https://arxiv.org/abs/2412.03246)
 
-**Contact:** alessandra.ragni@polimi.it, 
+**Contact:** alessandra.ragni@polimi.it 
 
 ---
 
@@ -156,6 +156,7 @@ This folder contains all scripts used to generate the LaTeX tables appearing in 
   
 - `.txt` files with the LaTeX table bodies
 
+---
 
 ## Software Environment
 
