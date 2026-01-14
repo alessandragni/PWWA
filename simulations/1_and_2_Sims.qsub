@@ -1,0 +1,19 @@
+#!/bin/bash
+#PBS -S /bin/bash
+#PBS -l select=1:ncpus=2,walltime=100:00:00
+#PBS -N SimTabC1TabC2
+#PBS -j oe
+
+cd "$PBS_O_WORKDIR"
+
+source $HOME/spack-1.0/share/spack/setup-env.sh
+spack load r
+
+export OMP_NUM_THREADS=1
+export MKL_NUM_THREADS=1
+export OPENBLAS_NUM_THREADS=1
+
+Rscript "$HOME/PWWA/simulations/1_SimTabC1.R" &
+Rscript "$HOME/PWWA/simulations/2_SimTabC2.R" &
+
+wait
