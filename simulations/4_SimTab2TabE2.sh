@@ -34,7 +34,7 @@ export OMP_NUM_THREADS=1
 export MKL_NUM_THREADS=1
 export OPENBLAS_NUM_THREADS=1
 
-Rscript "$HOME/PWWA-BiometricalJournal/simulations/4_SimTab2TabE2.R" \
+Rscript "$HOME/PWWA/simulations/4_SimTab2TabE2.R" \
         "$type" "$dep" "$varz" "$scaled"
 
 EOF
