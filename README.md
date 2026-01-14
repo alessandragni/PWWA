@@ -1,7 +1,5 @@
 # Nonparametric Estimation of the Patient-Weighted While-Alive Estimand
 
-**Supplementary information & reproducible research code**
-
 This repository contains all the scripts 
 required to reproduce the tables and figures of the manuscript:
 
@@ -10,7 +8,7 @@ required to reproduce the tables and figures of the manuscript:
 
 [arXiv preprint](https://arxiv.org/abs/2412.03246)
 
-📧 **Contact:** alessandra.ragni@polimi.it
+**Contact:** alessandra.ragni@polimi.it
 
 ---
 
@@ -18,10 +16,10 @@ required to reproduce the tables and figures of the manuscript:
 
 The purpose of this repository is to ensure full reproducibility of the results presented in the manuscript.
 
-All analyses are implemented in **R**.
+The implementation of the present repository leverages the **R** implementation included 
+within the R package `mets` (specifically `WA_recurrent()`, by Prof. Thomas Scheike).
 
 The repository is organized as follows:
-
 
 ```
 .
@@ -56,7 +54,7 @@ The working directory should be set to the **main repository folder**.
   > **JAMA**, 301(14), 1439–1450.
   
   This dataset **cannot be shared** due to privacy and confidentiality restrictions.  
-  It was kindly provided by the BioLINCC of the National Heart, Lung, and Blood Institute.
+  Four our paper, it was kindly provided by the BioLINCC of the National Heart, Lung, and Blood Institute.
 
 
 - `colorectal.rda`
