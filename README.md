@@ -16,8 +16,9 @@ required to reproduce the tables and figures of the manuscript:
 
 The purpose of this repository is to ensure full reproducibility of the results presented in the manuscript.
 
-The implementation of the present repository leverages the **R** implementation included 
-within the R package `mets` (specifically `WA_recurrent()`, by Prof. Thomas Scheike [thsc@sund.ku.dk]).
+The implementation of the present repository leverages the implementation included 
+within the **R** package `mets` (specifically [`WA_recurrent()`](https://github.com/kkholst/mets/blob/develop/R/WA-estimands.R), 
+by Prof. Thomas Scheike).
 
 The repository is organized as follows:
 
