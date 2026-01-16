@@ -1,4 +1,4 @@
-
+rm(list = ls())
 
 # import functions
 source("simulations/utilsTabC1.R")
