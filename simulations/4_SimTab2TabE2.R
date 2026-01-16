@@ -53,7 +53,7 @@ n <- 1000
 nsim <- 5000
 
 ntrue <- 10000
-nsimtrue <- 100
+nsimtrue <- 500
 
 
 # set values

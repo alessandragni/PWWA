@@ -16,7 +16,7 @@ for varz in "${theta_vals[@]}"; do
 
 #!/bin/bash
 #PBS -S /bin/bash
-#PBS -l select=1:ncpus=1:mpiprocs=2
+#PBS -l select=1:ncpus=96
 #PBS -l walltime=100:00:00
 #PBS -N SimTab1TabE1
 #PBS -j oe

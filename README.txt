@@ -137,8 +137,9 @@ It contains four subfolders containing the following files:
     
     1_and_2_Sims.qsub
     A PBS batch job submission script written in Bash. 
-    It runs two R simulation scripts in parallel on a Linux cluster, through qsub 1_and_2_Sims.qsub
-    Note that it might be necessary to change these two lines
+    It runs two R simulation scripts in parallel on a Linux cluster on 96 cores, through qsub 1_and_2_Sims.qsub
+    Note that it might be necessary to change these lines
+    #PBS -l select=1:ncpus=96,walltime=100:00:00
     source $HOME/spack-1.0/share/spack/setup-env.sh
     spack load r
     
@@ -153,10 +154,12 @@ It contains four subfolders containing the following files:
     3_SimTab1TabE1.sh
     A Bash submission script that iterates over parameter values and submits multiple PBS batch jobs using qsub. 
     Each job runs an R simulation script with different (varz, cens) parameter combinations.
+    Simulation was performed in parallel on 96 cores on a Linux server.
     It can be run through
     chmod +x 3_SimTab1TabE1.sh
     ./3_SimTab1TabE1.sh
-    Note that it might be necessary to change these two lines depending on how R was installed
+    Note that it might be necessary to change these lines:
+    #PBS -l select=1:ncpus=96
     source $HOME/spack-1.0/share/spack/setup-env.sh
     spack load r
     
@@ -171,10 +174,12 @@ It contains four subfolders containing the following files:
     4_SimTab2TabE2.sh
     A Bash submission script that iterates over parameter values and submits multiple PBS batch jobs using qsub. 
     Each job runs an R simulation script with different (type, dep, varz, scaled) parameter combinations.
+    Simulation was performed in parallel on 96 cores on a Linux server.
     It can be run through
     chmod +x 4_SimTab2TabE2.sh
     ./4_SimTab2TabE2.sh
-    Note that it might be necessary to change these two lines
+    Note that it might be necessary to change these lines:
+    #PBS -l select=1:ncpus=96
     source $HOME/spack-1.0/share/spack/setup-env.sh
     spack load r
     

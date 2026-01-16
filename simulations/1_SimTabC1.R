@@ -1,7 +1,6 @@
 ##### Simulation Study in Web Appendix C (mentioned in Section 5) #####
 # Code used for producing Web Table C.1
 
-
 library(timereg)
 library(Rcpp)
 library(mets)
@@ -13,9 +12,8 @@ setwd("~/PWWA")
 Rcpp::sourceCpp("simulations/functionsTabC1.cpp")
 source("simulations/utilsTabC1.R")
 
-
-
-cc = detectCores()
+RcppArmadillo::armadillo_set_number_of_omp_threads(1)
+cc=detectCores()
 registerDoMC(cc)
 
 

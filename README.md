@@ -119,7 +119,7 @@ Intermediate results are saved, respectively, in:
 
 ### Batch Submission Scripts
 
-The following scripts are provided for running simulations on a Linux cluster using **PBS/qsub**:
+The following scripts are provided for running simulations on a Linux cluster using **PBS/qsub** on 96 cores:
 
 - `1_and_2_Sims.qsub` 
   Runs simulations for Tables C.1 and C.2 in parallel.
@@ -133,6 +133,7 @@ The following scripts are provided for running simulations on a Linux cluster us
 You may need to adapt the following lines depending on your system setup:
 
 ```bash
+#PBS -l select=1:ncpus=96
 source $HOME/spack-1.0/share/spack/setup-env.sh
 spack load r
 ```

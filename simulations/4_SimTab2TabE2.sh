@@ -20,7 +20,7 @@ for type in "${typevals[@]}"; do
 
 #!/bin/bash
 #PBS -S /bin/bash
-#PBS -l select=1:ncpus=1:mpiprocs=2
+#PBS -l select=1:ncpus=96
 #PBS -l walltime=100:00:00
 #PBS -N SimTab2TabE2
 #PBS -j oe
