@@ -1,4 +1,3 @@
-rm(list = ls())
 
 # import functions
 source("simulations/utilsTabC1.R")
@@ -82,4 +81,5 @@ for (s in 1:length(scenarios)) {
   }
 }
 
+on.exit(sink(), add = TRUE)  
 
