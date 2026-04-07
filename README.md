@@ -40,7 +40,35 @@ The repository is organized as follows:
 └── README.txt
 ```
 
-The working directory should be set to the **main repository folder**.
+The working directory should be set to the **main repository folder** (`PWWA/`) before running any script. 
+All file paths in the code are relative to this root.
+
+---
+
+### Operating System Compatibility and Parallelisation
+
+**This code is incompatible with Windows.** 
+The parallelisation relies on `doMC` and `mclapply`, which use Unix process forking. 
+These mechanisms are not available on Windows. The code has been developed and tested on macOS and Linux only.
+
+Moreover, all four simulation scripts use parallelisation **within R** via `doMC` and `foreach %dopar%`, independently of any outer shell-level parallelism provided by the `.sh` / `.qsub` batch scripts. 
+By default, each script detects the number of available cores automatically:
+
+```r
+cc <- detectCores()
+registerDoMC(cc)
+```
+
+To limit the number of cores used, replace `detectCores()` with a fixed integer before running the script:
+
+```r
+# example
+cc <- 4          # use 4 cores instead of all available
+registerDoMC(cc)
+```
+
+This line appears near the top of each of the four simulation scripts 
+(line 14 both in `1_SimTabC1.R` and `2_SimTabC2.R`, line 33 both in `3_SimTab1TabE1.R` and `4_SimTab2TabE2.R`).
 
 ---
 
@@ -231,3 +259,20 @@ loaded via a namespace (and not attached):
 [13] globals_0.18.0      tools_4.5.1         future.apply_1.20.1
 [16] listenv_0.10.0   
 ```
+
+---
+
+## Runtime Estimates
+
+Runtimes below were measured on the **Linux HPC cluster** (x86_64, Rocky Linux 9.6) using all 96 cores, and on the **local macOS machine** (Apple M-series, macOS Sequoia) using all available cores. 
+Times are approximate and scale roughly inversely with the number of cores used.
+
+| Script | `nsim` | Cluster (96 cores) | Local macOS (all cores) |
+|---|---|---|---|
+| `1_SimTabC1.R` | 1000 | ~2–3 h | ~8–12 h |
+| `2_SimTabC2.R` | 1000 | ~1–2 h | ~4–6 h |
+| `3_SimTab1TabE1.R` | 5000 | ~4–6 h | ~20–30 h |
+| `4_SimTab2TabE2.R` | 5000 | ~4–6 h | ~20–30 h |
+
+Scripts 3 and 4 additionally run `nsimtrue = 500` large-sample (`n = 10000`) replications to estimate true values; this contributes the majority of their runtime.
+
