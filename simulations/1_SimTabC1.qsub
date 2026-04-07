@@ -1,7 +1,7 @@
 #!/bin/bash
 #PBS -S /bin/bash
 #PBS -l select=1:ncpus=96,walltime=100:00:00
-#PBS -N SimTabC1TabC2
+#PBS -N SimTabC1
 #PBS -j oe
 
 cd "$PBS_O_WORKDIR"
@@ -13,7 +13,4 @@ export OMP_NUM_THREADS=1
 export MKL_NUM_THREADS=1
 export OPENBLAS_NUM_THREADS=1
 
-Rscript "$HOME/PWWA/simulations/1_SimTabC1.R" &
-Rscript "$HOME/PWWA/simulations/2_SimTabC2.R" &
-
-wait
+Rscript "$HOME/PWWA/simulations/1_SimTabC1.R"

@@ -26,10 +26,10 @@ nsim <- 1000
 k = 3
 
 set.seed(1)
-seeds <- sample(1:10^6, size = (nsim+1), replace = FALSE)
+seeds <- sample(1:10^6, size = 5001, replace = FALSE)
 
 for(cens in c(0.01, 0.03, 0.05)){
-  res <- foreach (i=0:nsim) %dopar% { 
+  res <- foreach (i=1:nsim) %dopar% { 
     result <- NULL
     while (is.null(result)) {
       try({

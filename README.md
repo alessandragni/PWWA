@@ -122,8 +122,11 @@ Intermediate results are saved, respectively, in:
 
 The following scripts are provided for running simulations on a **Linux HPC cluster** using **PBS/qsub** on 96 cores:
 
-- `1_and_2_Sims.qsub` 
-  Runs simulations for Tables C.1 and C.2 in parallel.
+- `1_SimTabC1.qsub` 
+  Runs simulations for Table C.1.
+  
+- `2_SimTabC2.qsub`  
+  Runs simulations for Table C.2.
 
 - `3_SimTab1TabE1.sh`
   Submits multiple jobs for Table 1 and Web Table E.1.
@@ -138,15 +141,6 @@ You may need to adapt the following lines depending on your system setup:
 source $HOME/spack-1.0/share/spack/setup-env.sh
 spack load r
 ```
-
-Runtime Estimates are as follows:
-
-| Script | `nsim` | HPC Cluster 
-|---|---|---|
-| `1_and_2_Sims.qsub` | 1000 both for `1_SimTabC1.R` and `2_SimTabC2.R`| ~ 2 h |  
-| `3_SimTab1TabE1.sh` | 5000 | ~ 2 min | 
-| `4_SimTab2TabE2.sh` | 5000 | ~ 16 min | 
-
 
 
 ### `./simulations/results/`
@@ -178,7 +172,7 @@ This folder contains all scripts used to generate the LaTeX tables appearing in 
 Indeed, the parallelisation relies on `doMC` and `mclapply`, which use Unix process forking; these mechanisms are not available on Windows.
 
 Moreover, all four simulation scripts use parallelisation **within R** via `doMC` and `foreach %dopar%`, 
-independently of any outer shell-level parallelism provided by the `.sh` / `.qsub` batch scripts. 
+independently of any outer shell-level parallelism provided by the `.sh` batch scripts. 
 By default, each script detects the number of available cores automatically:
 
 ```r
@@ -272,5 +266,14 @@ loaded via a namespace (and not attached):
 [16] listenv_0.10.0   
 ```
 
+---
 
+### Runtime Estimates
+
+| Script | `nsim` | HPC Cluster | Local macOS (8 cores) |
+|---|---|---|---|
+| `1_SimTabC1.R` | 1000 | ~ h | ~ h |
+| `2_SimTabC2.R` | 1000 | ~ h | ~ h |
+| `3_SimTab1TabE1.R` | 5000 | ~ h | not tested |
+| `4_SimTab2TabE2.R` | 5000 | ~ h | not tested |
 
