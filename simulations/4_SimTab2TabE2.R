@@ -6,8 +6,6 @@ library(mets)
 library(doMC)
 library(RcppArmadillo)
 
-setwd("~/PWWA")
-
 # Import functions
 source("simulations/utils.R")
 

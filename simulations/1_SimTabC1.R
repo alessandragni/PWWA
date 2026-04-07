@@ -6,8 +6,6 @@ library(Rcpp)
 library(mets)
 library(doMC)
 
-setwd("~/PWWA")
-
 # Import functions
 Rcpp::sourceCpp("simulations/functionsTabC1.cpp")
 source("simulations/utilsTabC1.R")

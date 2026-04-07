@@ -6,8 +6,6 @@ library(Rcpp)
 library(timereg)
 library(doMC)
 
-setwd("~/PWWA")
-
 source("simulations/utilsTabC2.R")
 
 RcppArmadillo::armadillo_set_number_of_omp_threads(1)
