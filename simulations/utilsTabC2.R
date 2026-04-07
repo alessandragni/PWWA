@@ -141,7 +141,8 @@ dynCensAug <- function(formC,data,augmentC=~+1,response="Yipcw",time=NULL,Z=NULL
 } ## }}}
 
 
-onerun <- function(i,n,time=1,cm=~1,k=3,cens=0.005,response="EpT",dcr=1,...) {# {{{
+onerun <- function(i,n,time=1,cm=~1,k=3,cens=0.005,seeds,response="EpT",dcr=1,...) {# {{{
+  set.seed(seeds[i])
   
   nid <- n
   if (i%%200==0) print(i)

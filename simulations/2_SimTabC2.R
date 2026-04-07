@@ -17,7 +17,7 @@ registerDoMC(cc)
 ###
 
 set.seed(1)
-true10 <- onerun(1, 400000, cens=NULL, time=10, k = 3)
+true10 <- onerun(1, 400000, cens=NULL, time=10, k = 3, seeds = 1)
 true10
 
 
@@ -25,6 +25,8 @@ n <- 1000
 nsim <- 1000
 k = 3
 
+set.seed(1)
+seeds <- sample(1:10^6, size = (nsim+1), replace = FALSE)
 
 for(cens in c(0.01, 0.03, 0.05)){
   res <- foreach (i=0:nsim) %dopar% { 
@@ -32,7 +34,7 @@ for(cens in c(0.01, 0.03, 0.05)){
     while (is.null(result)) {
       try({
         result <- onerun(i, n, time = 10, k = k, cm = ~strata(A, gL), 
-                         cens = cens)
+                         cens = cens, seeds = seeds)
       }, silent = TRUE)
     }
     result
