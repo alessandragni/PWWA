@@ -155,6 +155,23 @@ source $HOME/spack-1.0/share/spack/setup-env.sh
 spack load r
 ```
 
+### Runtime Estimates
+
+| Script | `nsim` | HPC Cluster* | Local macOS** |
+|---|---|---|---|
+| `1_SimTabC1.R` | 1000 | ~ 42 min | not tested |
+| `2_SimTabC2.R` | 1000 | ~ 3 min | not tested |
+| `3_SimTab1TabE1.R` | 5000 | ~ 11 min | not tested |
+| `4_SimTab2TabE2.R` | 5000 | ~ 9 min | not tested |
+| | | | |
+| `1_SimTabC1.R` | 5 | ~ 1 min | ~ 49 sec |
+| `2_SimTabC2.R` | 5 | ~ 1 min | ~ 24 sec |
+| `3_SimTab1TabE1.R` | 5 | ~ 1 min | not tested |
+| `4_SimTab2TabE2.R` | 5 | ~ 2 min | not tested |
+
+*see Batch Submission Scripts setup; the cluster includes 40 CPU nodes, each with 48 cores (96 threads) and 512 GB RAM.
+** with 8 cores.
+
 
 ### `./simulations/results/`
 
@@ -279,19 +296,4 @@ loaded via a namespace (and not attached):
 [16] listenv_0.10.0   
 ```
 
----
-
-### Runtime Estimates
-
-| Script | `nsim` | HPC Cluster | Local macOS (8 cores) |
-|---|---|---|---|
-| `1_SimTabC1.R` | 1000 | ~ min | not tested |
-| `2_SimTabC2.R` | 1000 | ~ min | not tested |
-| `3_SimTab1TabE1.R` | 5000 | ~ min | not tested |
-| `4_SimTab2TabE2.R` | 5000 | ~ min | not tested |
-|---|---|---|---|
-| `1_SimTabC1.R` | 5 | ~ min | ~ 49 sec |
-| `2_SimTabC2.R` | 5 | ~ min | ~ 24 sec |
-| `3_SimTab1TabE1.R` | 5 | ~ min | not tested |
-| `4_SimTab2TabE2.R` | 5 | ~ min | not tested |
 
