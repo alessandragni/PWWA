@@ -285,13 +285,13 @@ loaded via a namespace (and not attached):
 
 | Script | `nsim` | HPC Cluster | Local macOS (8 cores) |
 |---|---|---|---|
-| `1_SimTabC1.R` | 1000 | ~ min | ~ min |
-| `2_SimTabC2.R` | 1000 | ~ min | ~ min |
+| `1_SimTabC1.R` | 1000 | ~ min | not tested |
+| `2_SimTabC2.R` | 1000 | ~ min | not tested |
 | `3_SimTab1TabE1.R` | 5000 | ~ min | not tested |
 | `4_SimTab2TabE2.R` | 5000 | ~ min | not tested |
 |---|---|---|---|
-| `1_SimTabC1.R` | 5 | ~ min | ~ min |
-| `2_SimTabC2.R` | 5 | ~ min | ~ min |
+| `1_SimTabC1.R` | 5 | ~ min | ~ 49 sec |
+| `2_SimTabC2.R` | 5 | ~ min | ~ 24 sec |
 | `3_SimTab1TabE1.R` | 5 | ~ min | not tested |
 | `4_SimTab2TabE2.R` | 5 | ~ min | not tested |
 
