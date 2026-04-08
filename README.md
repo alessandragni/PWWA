@@ -101,6 +101,12 @@ Intermediate results are saved in:
 ./intermediate_results/TabC1TabC2/
 ```
 
+For audit and reproducibility checks, simulation files are also run with a reduced number of replications (`nsim = 5`), 
+and the corresponding outputs are saved in:
+```
+./intermediate_results/TabC1TabC2_nsim5/
+```
+
 
 ### Tables 1, 2 and Web Appendix E.1 and E.2
 
@@ -117,21 +123,28 @@ Intermediate results are saved, respectively, in:
 ./intermediate_results/Tab2TabE2/
 ```
 
+For audit and reproducibility checks, simulation files are also run with a reduced number of replications (`nsim = 5`), 
+and the corresponding outputs are saved in:
+```
+./intermediate_results/Tab1TabE1_nsim5/
+./intermediate_results/Tab2TabE2_nsim5/
+```
+
 
 ### Batch Submission Scripts
 
-The following scripts are provided for running simulations on a **Linux HPC cluster** using **PBS/qsub** on 96 cores:
+The following scripts are provided for running simulations on a **Linux HPC cluster** using **PBS/qsub**:
 
-- `1_SimTabC1.qsub` 
+- `1_SimTabC1.qsub`
   Runs simulations for Table C.1.
-  
-- `2_SimTabC2.qsub`  
+
+- `2_SimTabC2.qsub`
   Runs simulations for Table C.2.
 
 - `3_SimTab1TabE1.sh`
   Submits multiple jobs for Table 1 and Web Table E.1.
 
-- `4_SimTab2TabE2.sh` 
+- `4_SimTab2TabE2.sh`
   Submits multiple jobs for Table 2 and Web Table E.2.
 
 You may need to adapt the following lines depending on your system setup:
@@ -169,7 +182,7 @@ This folder contains all scripts used to generate the LaTeX tables appearing in 
 ## Operating System Compatibility and Parallelisation
 
 **This code is incompatible with Windows.** 
-Indeed, the parallelisation relies on `doMC` and `mclapply`, which use Unix process forking; these mechanisms are not available on Windows.
+Indeed, the parallelisation relies on `doMC` and `mclapply`, which use Unix process forking.
 
 Moreover, all four simulation scripts use parallelisation **within R** via `doMC` and `foreach %dopar%`, 
 independently of any outer shell-level parallelism provided by the `.sh` batch scripts. 
@@ -189,7 +202,7 @@ registerDoMC(cc)
 ```
 
 This line appears near the top of each of the four simulation scripts 
-(line 14 both in `1_SimTabC1.R` and `2_SimTabC2.R`, line 33 both in `3_SimTab1TabE1.R` and `4_SimTab2TabE2.R`).
+(i.e., in line 14 both in `1_SimTabC1.R` and `2_SimTabC2.R`, in line 33 both in `3_SimTab1TabE1.R` and `4_SimTab2TabE2.R`).
 
 
 ---
@@ -272,8 +285,13 @@ loaded via a namespace (and not attached):
 
 | Script | `nsim` | HPC Cluster | Local macOS (8 cores) |
 |---|---|---|---|
-| `1_SimTabC1.R` | 1000 | ~ h | ~ h |
-| `2_SimTabC2.R` | 1000 | ~ h | ~ h |
-| `3_SimTab1TabE1.R` | 5000 | ~ h | not tested |
-| `4_SimTab2TabE2.R` | 5000 | ~ h | not tested |
+| `1_SimTabC1.R` | 1000 | ~ min | ~ min |
+| `2_SimTabC2.R` | 1000 | ~ min | ~ min |
+| `3_SimTab1TabE1.R` | 5000 | ~ min | not tested |
+| `4_SimTab2TabE2.R` | 5000 | ~ min | not tested |
+|---|---|---|---|
+| `1_SimTabC1.R` | 5 | ~ min | ~ min |
+| `2_SimTabC2.R` | 5 | ~ min | ~ min |
+| `3_SimTab1TabE1.R` | 5 | ~ min | not tested |
+| `4_SimTab2TabE2.R` | 5 | ~ min | not tested |
 

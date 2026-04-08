@@ -25,7 +25,7 @@ at = function(t, k, df,
               Lam12.tau1, Lam12.tau12,
               Lam12.tauc, 
               tauc, KC.tauc, dLamC) {
-  
+
   CM1 = CM1_cpp(t, k, df$Ttilde2, df$Ttilde1, df$delta1, 
                 tau12, dLam12, 
                 tau1, dLam1,
@@ -35,6 +35,7 @@ at = function(t, k, df,
                 Lam2.tauc,
                 Lam12.tau1, Lam12.tau12,
                 tauc, KC.tauc, dLamC)
+  
   
   CM2 = CM2_cpp(t, k, df$Ttilde2, df$Ttilde1, df$delta1, 
                 tau12, dLam12, Lam12.tauc, Lam12.tau12,
