@@ -15,7 +15,7 @@ cc=detectCores()
 registerDoMC(cc)
 
 
-nsim <- 1000 
+nsim <- 1000 # change here to reduce nsim
 n = 1000 
 
 t = 10
@@ -23,7 +23,7 @@ k = 3
 
 
 for (S in 1:6){
-  for (CENS in c(0.01, 0.03, 0.05)){ # 
+  for (CENS in c(0.01, 0.03, 0.05)){ 
 
     print(S)
     print(CENS)
@@ -34,7 +34,7 @@ for (S in 1:6){
     se.coef <- do.call("rbind", lapply(res10, function(x) x$se.coef) )
     
     write.table(cbind(coef[,1:2], se.coef, coef[,3:6]), 
-                file=paste("simulations/intermediate_results/TabC1TabC2/C1results_",
+                file=paste("simulations/intermediate_results/TabC1TabC2/C1results_", # eventually, replace here TabC1TabC2 with TabC1TabC2_nsim5
                            S,
                            "_",
                            CENS,

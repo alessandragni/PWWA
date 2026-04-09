@@ -49,7 +49,7 @@ scale1 = 1
 scaled = 1
 
 n <- 1000
-nsim <- 5000 
+nsim <- 5000 # change here to reduce nsim
 
 ntrue <- 10000
 nsimtrue <- 500

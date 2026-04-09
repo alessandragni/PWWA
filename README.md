@@ -186,7 +186,7 @@ Indeed, the parallelisation relies on `doMC` and `mclapply`, which use Unix proc
 
 Moreover, all four simulation scripts use parallelisation **within R** via `doMC` and `foreach %dopar%`, 
 independently of any outer shell-level parallelism provided by the `.sh` batch scripts. 
-By default, each script detects the number of available cores automatically:
+By default, each R script detects the number of available cores automatically:
 
 ```r
 cc <- detectCores()

@@ -22,7 +22,7 @@ true10
 
 
 n <- 1000
-nsim <- 1000
+nsim <- 1000 # change here to reduce nsim
 k = 3
 
 set.seed(1)
@@ -42,7 +42,7 @@ for(cens in c(0.01, 0.03, 0.05)){
 
   
   write.table(ana(res, true = true10$coef), 
-              file=paste("simulations/intermediate_results/TabC1TabC2/C2results_1_",
+              file=paste("simulations/intermediate_results/TabC1TabC2/C2results_1_", # eventually, replace here TabC1TabC2 with TabC1TabC2_nsim5
                          cens,
                          "_insidek",
                          k,
