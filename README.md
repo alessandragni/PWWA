@@ -6,7 +6,7 @@ required to reproduce the tables and figures of the manuscript:
 > **“Nonparametric Estimation of the Patient-Weighted While-Alive Estimand”**  
 > **Authors:** Alessandra Ragni, Torben Martinussen, Thomas Scheike
 
-[arXiv preprint](https://arxiv.org/abs/2412.03246)
+[Biometrical Journal, DOI 10.1002/bimj.70143](https://doi.org/10.1002/bimj.70143)
 
 **Contact:** alessandra.ragni@polimi.it 
 
